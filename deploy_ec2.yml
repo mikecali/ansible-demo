@@ -7,12 +7,12 @@
   
   tasks:
 
-  - set_fact: aws_region=ap-southeast-2
+  - set_fact: aws_region=us-east-2
   - set_fact: iam_role=EC2_Admin 
   - set_fact: ami_to_use=ami-dda36dbf
-  - set_fact: key_to_use=talor-key
-  - set_fact: subnet_to_use=subnet-e318b5aa
-  - set_fact: sg_to_use=sg-a1450ed8
+  - set_fact: key_to_use=ec2-ocp
+  - set_fact: subnet_to_use=subnet-a49aa4e9
+  - set_fact: sg_to_use=sg-6ef3a405
 
   - debug: var=instance_name
   - debug: var=instance_type
