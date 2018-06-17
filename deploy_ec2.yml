@@ -27,7 +27,7 @@
       instance_type: "{{ instance_type }}"
       group_id: "{{ sg_to_use }}"
       key_name: "{{ key_to_use }}"
-      region: ap-southeast-2
+      region: us-east-2
       state: present
       vpc_subnet_id: "{{ subnet_to_use }}"
       volumes:
@@ -46,19 +46,19 @@
     ec2_vol:
       instance: "{{ ec2_instance.instances[0].id }}"
       device_name: '/dev/sda1'
-      region: ap-southeast-2
+      region: us-east-2
     register: ec2_vol
 
   - name: Tag the boot EBS volume
     ec2_tag:
-      region: ap-southeast-2
+      region: us-east-2
       resource: "{{ ec2_vol.volume_id }}"
       tags:
         Name: "{{ instance_name }}-boot"
 
   - name: Grab EC2 instance facts
     ec2_instance_facts:
-      region: ap-southeast-2
+      region: us-east-2
       instance_ids:
        - "{{ ec2_instance.instances[0].id }}"
     register: instance_facts
