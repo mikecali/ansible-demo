@@ -4,6 +4,8 @@
   hosts: all 
   become: true
   become_user: root
+
+  tasks:
   - set_fact: aws_region=us-east-2
   - set_fact: iam_role=ec2
   - set_fact: ami_to_use=ami-03291866
