@@ -8,7 +8,7 @@
 
   - set_fact: aws_region=us-east-2
   - set_fact: iam_role=EC2_Admin 
-  - set_fact: ami_to_use=ami-dda36dbf
+  - set_fact: ami_to_use=ami-03291866
   - set_fact: key_to_use=ec2-ocp.pem
   - set_fact: subnet_to_use=subnet-a49aa4e9
   - set_fact: sg_to_use=sg-6ef3a405
