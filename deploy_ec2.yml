@@ -42,11 +42,13 @@
     register: ec2_instance
     failed_when: false
 
+  - debug: var=ec2_instance
+
   - name: Get the root volume_id
     ec2_vol:
       instance: "{{ ec2_instance.instances[0].id }}"
       device_name: /dev/sda1
-#      region: us-east-2
+      region: us-east-2
     register: ec2_vol
 
   - name: Tag the boot EBS volume
