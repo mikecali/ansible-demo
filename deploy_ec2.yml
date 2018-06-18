@@ -1,8 +1,8 @@
 ---
 - name: Launches a new instance
 
-  hosts: all 
-
+  hosts: local
+  connection: local
   gather_facts: no
   
   tasks:
