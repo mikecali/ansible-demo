@@ -68,4 +68,8 @@
     wait_for:
       port: 22
       host: "{{ instance_facts.instances[0].network_interfaces[0].association.public_ip }}"
+      delay: 60
+      timeout: 320
+      state: started
     msg: "Timeout waiting for 22 to respond"
+    ignore_errors: yes
