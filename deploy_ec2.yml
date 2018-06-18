@@ -10,7 +10,7 @@
   - set_fact: aws_region=us-east-2
   - set_fact: iam_role=EC2_Admin 
   - set_fact: ami_to_use=ami-dda36dbf
-  - set_fact: key_to_use=ec2-ocp
+  - set_fact: key_to_use=ec2-ocp.pem
   - set_fact: subnet_to_use=subnet-a49aa4e9
   - set_fact: sg_to_use=sg-6ef3a405
 
@@ -45,7 +45,7 @@
   - name: Get the root volume_id
     ec2_vol:
       instance: "{{ ec2_instance.instances[0].id }}"
-      device_name: '/dev/sda1'
+      device_name: "/dev/sda1"
       region: us-east-2
     register: ec2_vol
 
