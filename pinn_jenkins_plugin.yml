@@ -5,18 +5,22 @@
   become: true
   tasks:
 
-
-  - name: Pin plugin
+  - name: Install Ansible plugin 
     jenkins_plugin:
-      name: Ansible
+      name: Ansible Tower 
       url_username: "{{ jenkins_username }}"
       url_password: "{{ jenkins_password }}"
       url: "{{ jenkins_url }}"
-      state: pinned
-    register: plugin_pinned
+      state: pinned 
+    register: plugin_install
 
   - name: Restart Jenkins
     service:
       name: jenkins
       state: restarted
-    when: plugin_pinned.changed
+    when: plugin_install.changed
+
+  - name: Making Sure Jenkins restarts
+    service: 
+      name: jenkins
+      state: restarted
