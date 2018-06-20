@@ -13,10 +13,10 @@
       url: "{{ jenkins_url }}" 
     register: plugin_install
 
-  -name: Enable plugin
-   jenkins_plugin:
-     name: Ansible
-     state: enable
+  - name: Enable plugin
+    jenkins_plugin:
+      name: Ansible
+      state: enable
 
   - name: Restart Jenkins
     service:
