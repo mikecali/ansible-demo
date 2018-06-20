@@ -8,7 +8,7 @@
   - name: Install Ansible plugin 
     jenkins_plugin:
       name: Ansible 
-      url_username: "{{ jenkins_username }}"
+      params: "{{ jenkins_username }}"
       url_password: "{{ jenkins_password }}"
       url: "{{ jenkins_url }}" 
     register: plugin_install
