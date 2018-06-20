@@ -13,5 +13,8 @@
   - set_fact: subnet_to_use=subnet-a49aa4e9
   - set_fact: sg_to_use=sg-6ef3a405
 
+  - debug: var=disk_size
+ 
+
   roles:
      - jenkins-install
