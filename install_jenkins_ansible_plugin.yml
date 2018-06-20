@@ -16,7 +16,7 @@
   - name: Enable plugin
     jenkins_plugin:
       name: Ansible
-      state: enable
+      state: enabled
 
   - name: Restart Jenkins
     service:
