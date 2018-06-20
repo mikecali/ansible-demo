@@ -16,7 +16,9 @@
   - name: Enable plugin
     jenkins_plugin:
       name: Ansible
-      state: enabled
+      url_username: "{{ jenkins_username }}"
+      url_password: "{{ jenkins_password }}"
+      state: pinned
 
   - name: Restart Jenkins
     service:
