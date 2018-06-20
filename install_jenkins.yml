@@ -1,7 +1,7 @@
 ---
 
 - name: Install Jenkins
-  hosts: AnsibleClient2
+  hosts: "{{ hosts }}"
   become: true
   become_user: root
 
@@ -12,7 +12,7 @@
   - set_fact: sg_to_use=sg-6ef3a405
 
   - debug: var=ansible_user
- 
+  - debug: var=hosts 
 
   roles:
      - jenkins-install
