@@ -18,7 +18,9 @@
       name: Ansible
       url_username: "{{ jenkins_username }}"
       url_password: "{{ jenkins_password }}"
+      url: "{{ jenkins_url }}"
       state: pinned
+     register: plugin_pinned
 
   - name: Restart Jenkins
     service:
