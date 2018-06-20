@@ -8,15 +8,15 @@
   - name: Install Ansible plugin 
     jenkins_plugin:
       name: Ansible 
-      params: "{{ jenkins_username }}"
+      url_username "{{ jenkins_username }}"
       url_password: "{{ jenkins_password }}"
       url: "{{ jenkins_url }}" 
     register: plugin_install
 
-#  - name: Enable plugin
-#    jenkins_plugin:
-#      name: Ansible
-#      state: enabled
+  - name: Enable plugin
+    jenkins_plugin:
+      name: Ansible
+      state: enabled
 
   - name: Restart Jenkins
     service:
