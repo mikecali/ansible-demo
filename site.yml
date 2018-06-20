@@ -1,14 +1,14 @@
 ---
 
 - name: Set DNS and hostname correctly before doing anything else 
-  hosts: localhost
+  hosts: "{{ hosts }}"
   become: true
   become_user: root
   roles:
     - os-hostname
 
 - name: Apply common configuration to the nodes and install base packages
-  hosts: all
+  hosts: "{{ hosts }}"
   become: true
   become_user: root
   roles:
