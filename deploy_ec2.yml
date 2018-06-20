@@ -11,7 +11,8 @@
   - set_fact: ami_to_use=ami-03291866
   - set_fact: key_to_use=ec2-ocp
   - set_fact: subnet_to_use=subnet-a49aa4e9
-  - set_fact: sg_to_use=sg-6ef3a405
+  - set_fact: sg_to_use=sg-315cd65b
+
 
   - debug: var=instance_name
   - debug: var=instance_type
