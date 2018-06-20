@@ -1,0 +1,22 @@
+---
+- name: Installs ansible jenkins plugin 
+  hosts: "{{ hosts }}"
+  gather_facts: yes
+  become: true
+  tasks:
+
+
+  - name: Enable plugin
+    jenkins_plugin:
+      name: Ansible
+      url_username: "{{ jenkins_username }}"
+      url_password: "{{ jenkins_password }}"
+      url: "{{ jenkins_url }}"
+      state: pinned
+    register: plugin_pinned
+
+  - name: Restart Jenkins
+    service:
+      name: jenkins
+      state: restarted
+    when: plugin_pinned.changed
