@@ -1,0 +1,18 @@
+---
+
+- name: Install Jenkins
+  hosts: "{{ hosts }}"
+  become: true
+  become_user: root
+
+  tasks:
+  - set_fact: aws_region=us-east-2
+  - set_fact: ami_to_use=ami-03291866
+  - set_fact: key_to_use=ec2-ocp
+  - set_fact: sg_to_use=sg-6ef3a405
+
+  - debug: var=ansible_user
+  - debug: var=hosts 
+
+  roles:
+     - jenkins-bypass
