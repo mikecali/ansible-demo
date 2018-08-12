@@ -2,6 +2,7 @@
 - name: Launches a new instance
 
   hosts: localhost
+  become: false
   gather_facts: no
   
   tasks:
